@@ -13,10 +13,9 @@ endfunction
 
 function s:object()
 	let l:object = {}
-	let l:ext = {}
-	let l:ext.create = funcref('s:create', [l:object])
-	let l:ext.extends = funcref('s:extends', [l:object])
-	return s:extend(l:object, [l:ext])
+	let l:object.create = funcref('s:create', [l:object])
+	let l:object.extends = funcref('s:extends', [l:object])
+	return l:object
 endfunction
 
 function s:create(original)
